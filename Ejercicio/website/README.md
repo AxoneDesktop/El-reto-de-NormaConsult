@@ -8,43 +8,73 @@ Sistema base para el **Reto NormaConsult**. Este sistema permite gestionar ticke
 
 ### Requisitos Previos
 
-- Python 3.8 o superior
+- Python 3.11 o superior
 - pip (gestor de paquetes de Python)
+- Git
 
-### Paso 1: Descomprimir el archivo
+### Paso 1: Clonar el repositorio
 
 ```bash
-unzip reto_normaconsult.zip
-cd reto_normaconsult
+git clone https://github.com/AxoneDesktop/El-reto-de-NormaConsult.git
+cd El-reto-de-NormaConsult/Ejercicio/website
 ```
 
-### Paso 2: Crear entorno virtual (recomendado)
+### Paso 2: Configurar el entorno virtual
+
+#### 2.1 Usando Python venv (recomendado)
+
+**En Windows (PowerShell):**
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+**En Windows (Command Prompt):**
+```cmd
+python -m venv .venv
+.venv\Scripts\activate.bat
+```
 
 **En Linux/Mac:**
 ```bash
-python3 -m venv venv
-source venv/bin/activate
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 
-**En Windows:**
+#### 2.2 Usando Conda (alternativa)
+
 ```bash
-python -m venv venv
-venv\Scripts\activate
+conda env create -f environment.yml
+conda activate normaconsult
 ```
 
 ### Paso 3: Instalar dependencias
 
+**Si usas venv:**
 ```bash
 pip install -r requirements.txt
 ```
 
-### Paso 4: Ejecutar la aplicación
+**Si usas Conda:**
+Las dependencias ya se instalaron al crear el entorno con environment.yml
+
+### Paso 4: Configurar variables de entorno
+
+Crea un archivo `.env` en la raíz del proyecto con las siguientes variables:
+
+```env
+OPENAI_API_KEY=tu_api_key_aquí
+```
+
+### Paso 5: Ejecutar la aplicación
 
 ```bash
 python app.py
 ```
 
-La aplicación estará disponible en: **http://localhost:5000**
+La aplicación estará disponible en: **http://localhost:5010**
+
+> **Nota**: Si deseas cambiar el puerto, puedes modificarlo en `app.py`
 
 ## 📂 Estructura del Proyecto
 

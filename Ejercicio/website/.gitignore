@@ -3,6 +3,9 @@
 venv/
 env/
 
+# Script de key API
+create_env.py
+
 # Archivos de configuración
 .env
 
