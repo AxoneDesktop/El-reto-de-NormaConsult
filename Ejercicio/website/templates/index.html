@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NormaConsult - Sistema de Gestión</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 60px;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 50px;
+            font-size: 1.1em;
+        }
+
+        .modules {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .module-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 40px 30px;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .module-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .module-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .module-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .module-desc {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .info-box {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-top: 40px;
+            text-align: left;
+            border-radius: 5px;
+        }
+
+        .info-box h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .info-box p {
+            color: #555;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏗️ NormaConsult</h1>
+        <p class="subtitle">Sistema de Gestión de Consultas Técnicas</p>
+
+        <div class="modules">
+            <a href="/tickets" class="module-card">
+                <div class="module-icon">📋</div>
+                <div class="module-title">Sistema de Tickets</div>
+                <div class="module-desc">Gestiona y responde consultas de clientes</div>
+            </a>
+
+            <a href="/normativas" class="module-card">
+                <div class="module-icon">📚</div>
+                <div class="module-title">Base de Conocimiento</div>
+                <div class="module-desc">Busca en documentos normativos</div>
+            </a>
+        </div>
+
+        <div class="info-box">
+            <h3>ℹ️ Información del Sistema</h3>
+            <p>
+                Este es el sistema base de NormaConsult. Los trabajadores utilizan estas 
+                dos herramientas para atender las consultas de los clientes:
+            </p>
+            <ul style="margin-top: 10px; margin-left: 20px; color: #555;">
+                <li>Revisan tickets pendientes en el sistema de tickets</li>
+                <li>Buscan información en la base de conocimiento usando palabras clave</li>
+                <li>Responden al cliente con la información encontrada</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

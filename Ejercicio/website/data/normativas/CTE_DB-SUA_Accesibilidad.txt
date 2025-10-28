@@ -1,0 +1,255 @@
+CTE DB-SUA - DOCUMENTO BÁSICO DE SEGURIDAD DE UTILIZACIÓN Y ACCESIBILIDAD
+===========================================================================
+
+SECCIÓN SUA 1: SEGURIDAD FRENTE AL RIESGO DE CAÍDAS
+
+Artículo 1. Discontinuidades en el pavimento
+
+1.1 Resaltos en el pavimento:
+- Altura máxima: 6 mm si son redondeados
+- Altura máxima: 4 mm con canto vivo
+- Pendiente máxima en rampas: 1:20 (5%)
+
+1.2 Perforaciones en suelos:
+- Dimensión máxima: 15 mm de diámetro
+- En zonas de circulación frecuente: máximo 8 mm
+
+Artículo 2. Desniveles
+
+2.1 Protección de desniveles:
+Cuando exista un desnivel superior a 55 cm, se dispondrá una barrera de protección:
+- Altura mínima: 90 cm (uso residencial)
+- Altura mínima: 110 cm (uso público, docente, comercial)
+
+2.2 Las barreras de protección tendrán:
+- Resistencia horizontal: 3 kN/m (uso residencial)
+- Resistencia horizontal: 3 kN/m (uso público con zonas de acceso público)
+- No escalable: sin puntos de apoyo entre 20 cm y 70 cm de altura
+
+Artículo 3. Escaleras
+
+3.1 Peldaños:
+- Huella mínima: 28 cm (en escaleras de uso general)
+- Contrahuella máxima: 18,5 cm (uso general)
+- Contrahuella mínima: 13 cm
+- Relación: 54 cm ≤ 2C + H ≤ 70 cm
+
+Para escaleras de uso público:
+- Huella mínima: 28 cm
+- Contrahuella máxima: 17,5 cm
+- Contrahuella mínima: 13 cm
+
+3.2 Tramos:
+- Número máximo de peldaños sin descansillo: 16
+- Número mínimo de peldaños en un tramo: 3
+- Anchura mínima de escalera: 1,00 m
+
+3.3 Mesetas:
+- Anchura mínima igual a la escalera
+- Longitud mínima medida en dirección de evacuación: 1,00 m
+
+3.4 Pasamanos:
+Obligatorio en escaleras con desnivel > 55 cm:
+- Altura: 90-110 cm
+- En escaleras anchas (> 1,20 m): pasamanos a ambos lados
+- Firmeza y facilidad de aprehensión
+
+Artículo 4. Rampas
+
+4.1 Pendientes máximas:
+
+Para uso general:
+- Longitud ≤ 3 m: pendiente máxima 10%
+- Longitud 3-6 m: pendiente máxima 8%
+- Longitud 6-9 m: pendiente máxima 6%
+- Longitud > 9 m: pendiente máxima 4-5%
+
+Para rampas accesibles:
+- Tramos hasta 3 m: 10%
+- Tramos de 3 a 6 m: 8%
+- Tramos de 6 a 9 m: 6%
+- Tramos de más de 9 m: 4%
+
+4.2 Anchura mínima:
+- Uso general: 1,00 m
+- Accesible para PMR: 1,20 m
+
+4.3 Tramos y descansillos:
+- Longitud máxima de tramo sin descansillo: 9 m
+- Longitud mínima del descansillo: 1,50 m
+
+4.4 Pasamanos:
+Obligatorios en ambos lados cuando:
+- Longitud > 3 m, o
+- Desnivel > 55 cm
+
+Altura del pasamanos: 90-110 cm
+
+SECCIÓN SUA 2: SEGURIDAD FRENTE AL RIESGO DE IMPACTO O ATRAPAMIENTO
+
+Artículo 5. Impacto
+
+5.1 Altura libre de paso:
+- Altura mínima: 2,10 m en zonas de circulación
+- En umbrales de puertas: 2,00 m mínimo
+
+5.2 Elementos volados:
+Los elementos fijos que sobresalgan de las fachadas y que estén situados sobre zonas de circulación estarán a una altura ≥ 2,20 m.
+
+Artículo 6. Atrapamiento
+
+6.1 Puertas automáticas:
+Las puertas de apertura automática dispondrán de:
+- Detector de presencia
+- Sistema de reapertura automática en caso de detección de persona
+- Apertura manual en caso de fallo eléctrico
+
+6.2 Espacios de activación de puertas correderas automáticas: ≥ 1,20 m
+
+SECCIÓN SUA 3: SEGURIDAD FRENTE AL RIESGO DE APRISIONAMIENTO EN RECINTOS
+
+Artículo 7. Aprisionamiento
+
+Los recintos donde exista riesgo de aprisionamiento deben poder abrirse desde el interior sin llave. Ejemplos:
+- Baños y aseos
+- Vestuarios
+- Habitaciones de hotel
+
+SECCIÓN SUA 4: SEGURIDAD FRENTE AL RIESGO CAUSADO POR ILUMINACIÓN INADECUADA
+
+Artículo 8. Alumbrado normal
+
+8.1 Iluminancias mínimas (en lux):
+
+Zona de circulación: 50 lux
+Zona de no circulación: 100 lux
+Aparcamiento de vehículos: 50 lux
+Locales de riesgo especial: 100 lux
+
+8.2 Factor de uniformidad media:
+La relación entre la iluminancia mínima y la media debe ser:
+- Zonas de circulación: ≥ 0,40
+- Resto de zonas: ≥ 0,40
+
+Artículo 9. Alumbrado de emergencia
+
+9.1 Dotación:
+Es obligatorio en:
+- Todos los recorridos de evacuación
+- Aparcamientos cerrados o cubiertos > 100 m²
+- Locales de riesgo especial
+- Locales con ocupación > 100 personas
+- Aseos públicos para uso de más de 10 personas
+
+9.2 Características:
+- Iluminancia mínima en recorridos: 1 lux
+- Uniformidad: relación entre iluminancia máxima y mínima ≤ 40:1
+- Autonomía mínima: 1 hora
+- Entrada en funcionamiento: < 5 segundos
+
+SECCIÓN SUA 5: SEGURIDAD FRENTE AL RIESGO CAUSADO POR SITUACIONES DE ALTA OCUPACIÓN
+
+Artículo 10. Condiciones para evacuación rápida
+
+En locales de espectáculos y de uso público con densidad > 1 persona/m², se aplican requisitos especiales:
+- Puertas de salida con sistema de fácil apertura (barra antipánico)
+- Anchura libre mínima de puertas: 1,20 m
+
+SECCIÓN SUA 6: SEGURIDAD FRENTE AL RIESGO DE AHOGAMIENTO
+
+Artículo 11. Piscinas
+
+Las piscinas de uso colectivo deben tener:
+- Barrera de protección no escalable de altura ≥ 1,20 m
+- O sistema de protección que impida el acceso no controlado
+
+SECCIÓN SUA 7: SEGURIDAD FRENTE AL RIESGO CAUSADO POR VEHÍCULOS EN MOVIMIENTO
+
+Artículo 12. Características de las vías de circulación
+
+12.1 Dimensiones:
+- Altura libre: 2,20 m en todo el recorrido
+- Anchura mínima de calle de circulación: 3 m en sentido único, 5 m en doble sentido
+
+12.2 Pendiente máxima:
+- Rampas de circulación rectas: 16%
+- Rampas en curva (radio < 6 m): 12%
+
+SECCIÓN SUA 8: SEGURIDAD FRENTE AL RIESGO CAUSADO POR LA ACCIÓN DEL RAYO
+
+Artículo 13. Instalación de sistemas de protección
+
+Se instalará un sistema de protección contra el rayo cuando la frecuencia esperada de impactos Ne sea mayor que el riesgo admisible Na.
+
+Ne = Ng × Ae × C1 × 10^-6
+
+Donde:
+- Ng: densidad de impactos sobre el terreno (impactos/año·km²)
+- Ae: superficie de captura equivalente (m²)
+- C1: coeficiente relacionado con el entorno
+
+SECCIÓN SUA 9: ACCESIBILIDAD
+
+Artículo 14. Itinerarios accesibles
+
+14.1 Un itinerario es accesible cuando cumple:
+- Anchura libre de paso ≥ 1,20 m
+- Sin escalones ni resaltes > 2 cm
+- Pendientes según artículo 4 (rampas)
+
+14.2 Puertas en itinerarios accesibles:
+- Anchura libre mínima: 0,80 m
+- Espacio libre horizontal antes y después: diámetro Ø 1,50 m
+
+Artículo 15. Aseos accesibles
+
+15.1 Dotación:
+En edificios de uso público con aseos, al menos un aseo por cada 10 unidades o fracción debe ser accesible.
+
+15.2 Dimensiones mínimas:
+- Espacio libre para giro: diámetro Ø 1,50 m
+- Espacio de transferencia lateral al inodoro: 0,80 m de anchura
+
+15.3 Elementos:
+- Inodoro con espacio lateral ≥ 0,80 m
+- Barras de apoyo abatibles
+- Lavabo sin pedestal (suspendido)
+- Altura de mecanismos: 0,70-1,20 m
+
+Artículo 16. Plazas de aparcamiento accesibles
+
+16.1 Reserva:
+- 1 plaza por cada 40 o fracción (mínimo 1)
+- En uso residencial vivienda: 1 por cada 50 o fracción
+
+16.2 Dimensiones:
+- Dimensión mínima: 5,00 m x 2,20 m
+- Con banda de transferencia lateral de 1,20 m adicional
+
+Artículo 17. Espacios accesibles en zonas de uso público
+
+En zonas de uso público (salas, comedores, aulas):
+- Al menos el 2% de las plazas serán accesibles para PMR
+- Mínimo 1 plaza accesible
+
+Las plazas accesibles deben:
+- Tener espacio libre Ø 1,50 m
+- Estar distribuidas en distintas zonas
+- Estar próximas a itinerarios accesibles
+
+Artículo 18. Señalización
+
+Los elementos y espacios accesibles deben estar señalizados con el Símbolo Internacional de Accesibilidad (SIA):
+- En entradas accesibles
+- En plazas de aparcamiento accesibles
+- En aseos accesibles
+- En ascensores accesibles
+
+Artículo 19. Ascensores accesibles
+
+Los ascensores serán accesibles cuando cumplan:
+- Dimensión interior mínima de cabina: 1,00 m x 1,25 m
+- Anchura de puerta: ≥ 0,80 m
+- Pasamanos a 0,90 m de altura en tres paredes
+- Botonera accesible a altura 0,90-1,20 m
+- Señalización visual y sonora de planta

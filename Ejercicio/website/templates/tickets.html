@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Tickets - NormaConsult</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 1.8em;
+        }
+
+        .back-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        .filters {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .filter-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .tickets-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .ticket-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .ticket-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .ticket-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+        }
+
+        .ticket-id {
+            font-size: 0.9em;
+            color: #666;
+            font-weight: bold;
+        }
+
+        .ticket-status {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+
+        .status-pendiente {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-en-proceso {
+            background: #cce5ff;
+            color: #004085;
+        }
+
+        .status-resuelto {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .ticket-cliente {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .ticket-consulta {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .ticket-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85em;
+            color: #888;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 2em;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .close-btn:hover {
+            color: #333;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .section-content {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1em;
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+        }
+
+        .no-tickets {
+            text-align: center;
+            padding: 60px;
+            color: #999;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📋 Sistema de Tickets</h1>
+        <a href="/" class="back-btn">← Volver al inicio</a>
+    </div>
+
+    <div class="container">
+        <div class="filters">
+            <div class="filter-group">
+                <button class="filter-btn active" data-status="all">Todos</button>
+                <button class="filter-btn" data-status="pendiente">Pendientes</button>
+                <button class="filter-btn" data-status="en-proceso">En proceso</button>
+                <button class="filter-btn" data-status="resuelto">Resueltos</button>
+            </div>
+        </div>
+
+        <div id="tickets-container" class="tickets-grid">
+            <div class="loading">Cargando tickets...</div>
+        </div>
+    </div>
+
+    <!-- Modal para detalles del ticket -->
+    <div id="ticket-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Detalles del Ticket</h2>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+
+            <div class="section">
+                <div class="section-title">🏢 Cliente</div>
+                <div class="section-content" id="modal-cliente"></div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">❓ Consulta</div>
+                <div class="section-content" id="modal-consulta"></div>
+            </div>
+
+            <div class="section" id="similar-tickets-section" style="display: none;">
+                <div class="section-title">🔍 Tickets Similares</div>
+                <div class="section-content" id="similar-tickets"></div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">✍️ Respuesta</div>
+                <div class="suggestion-actions" style="margin-bottom: 10px;">
+                    <button class="btn btn-secondary" onclick="generateSuggestion()">Generar Sugerencia</button>
+                </div>
+                <textarea id="modal-respuesta" placeholder="Escribe aquí la respuesta para el cliente..."></textarea>
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-primary" onclick="saveResponse()">Guardar Respuesta</button>
+                <button class="btn btn-secondary" onclick="closeModal()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentTicketId = null;
+        let currentFilter = 'all';
+
+        // Cargar tickets al iniciar
+        loadTickets();
+
+        // Filtros
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentFilter = this.dataset.status;
+                loadTickets();
+            });
+        });
+
+        async function loadTickets() {
+            const container = document.getElementById('tickets-container');
+            container.innerHTML = '<div class="loading">Cargando tickets...</div>';
+
+            try {
+                const response = await fetch(`/api/tickets?status=${currentFilter}`);
+                const tickets = await response.json();
+
+                if (tickets.length === 0) {
+                    container.innerHTML = '<div class="no-tickets">No hay tickets en esta categoría</div>';
+                    return;
+                }
+
+                container.innerHTML = tickets.map(ticket => `
+                    <div class="ticket-card" onclick="openTicket(${ticket.id})">
+                        <div class="ticket-header">
+                            <div class="ticket-id">Ticket #${ticket.id}</div>
+                            <div class="ticket-status status-${ticket.status}">${formatStatus(ticket.status)}</div>
+                        </div>
+                        <div class="ticket-cliente">🏢 ${ticket.cliente}</div>
+                        <div class="ticket-consulta">${truncate(ticket.consulta, 150)}</div>
+                        <div class="ticket-meta">
+                            <span>📅 ${formatDate(ticket.fecha_creacion)}</span>
+                            ${ticket.fecha_respuesta ? `<span>✅ Respondido ${formatDate(ticket.fecha_respuesta)}</span>` : ''}
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                container.innerHTML = '<div class="no-tickets">Error al cargar tickets</div>';
+            }
+        }
+
+        async function openTicket(ticketId) {
+            try {
+                const response = await fetch(`/api/tickets/${ticketId}`);
+                const ticket = await response.json();
+
+                currentTicketId = ticketId;
+                document.getElementById('modal-title').textContent = `Ticket #${ticket.id}`;
+                document.getElementById('modal-cliente').textContent = ticket.cliente;
+                document.getElementById('modal-consulta').textContent = ticket.consulta;
+                document.getElementById('modal-respuesta').value = ticket.respuesta || '';
+
+                // Mostrar tickets similares si existen
+                const similarTicketsSection = document.getElementById('similar-tickets-section');
+                const similarTicketsContainer = document.getElementById('similar-tickets');
+                
+                if (ticket.similar_tickets && ticket.similar_tickets.length > 0) {
+                    similarTicketsContainer.innerHTML = ticket.similar_tickets.map(st => `
+                        <div class="similar-ticket" style="margin-bottom: 15px; padding: 10px; background: #fff; border-radius: 5px; border: 1px solid #ddd;">
+                            <div style="font-weight: bold; margin-bottom: 5px;">Ticket #${st.id} - ${st.cliente}</div>
+                            <div style="margin-bottom: 5px;"><strong>Consulta:</strong> ${st.consulta}</div>
+                            <div><strong>Respuesta:</strong> ${st.respuesta}</div>
+                            <button class="btn btn-secondary" style="margin-top: 10px;" 
+                                    onclick="useResponse('${st.respuesta.replace(/'/g, "\\'")}')">
+                                Usar esta respuesta
+                            </button>
+                        </div>
+                    `).join('');
+                    similarTicketsSection.style.display = 'block';
+                } else {
+                    similarTicketsSection.style.display = 'none';
+                }
+
+                document.getElementById('ticket-modal').classList.add('active');
+            } catch (error) {
+                alert('Error al cargar el ticket');
+            }
+        }
+
+        function useResponse(response) {
+            document.getElementById('modal-respuesta').value = response;
+        }
+
+        async function generateSuggestion() {
+            const consulta = document.getElementById('modal-consulta').textContent;
+            try {
+                const response = await fetch('/api/normativas/suggest_response', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        query: consulta
+                    })
+                });
+                
+                const data = await response.json();
+                if (data.suggested_response) {
+                    document.getElementById('modal-respuesta').value = data.suggested_response;
+                }
+            } catch (error) {
+                alert('Error al generar sugerencia');
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('ticket-modal').classList.remove('active');
+            currentTicketId = null;
+        }
+
+        async function saveResponse() {
+            const respuesta = document.getElementById('modal-respuesta').value;
+
+            if (!respuesta.trim()) {
+                alert('Por favor escribe una respuesta');
+                return;
+            }
+
+            try {
+                await fetch(`/api/tickets/${currentTicketId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        respuesta: respuesta,
+                        status: 'resuelto'
+                    })
+                });
+
+                alert('Respuesta guardada correctamente');
+                closeModal();
+                loadTickets();
+            } catch (error) {
+                alert('Error al guardar la respuesta');
+            }
+        }
+
+        function formatStatus(status) {
+            const statuses = {
+                'pendiente': 'Pendiente',
+                'en-proceso': 'En proceso',
+                'resuelto': 'Resuelto'
+            };
+            return statuses[status] || status;
+        }
+
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('es-ES', { 
+                day: '2-digit', 
+                month: '2-digit', 
+                year: 'numeric' 
+            });
+        }
+
+        function truncate(text, length) {
+            return text.length > length ? text.substring(0, length) + '...' : text;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+name: norma-consult2
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - flask=3.0.0
+  - werkzeug=3.0.1
+  - pip
+  - sentence-transformers==2.5.1
+  - faiss-cpu==1.7.4
+  - openai==1.3.0
+  - python-dotenv==1.0.0
+  - tiktoken==0.5.2
+  - numpy==1.26.2

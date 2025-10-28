@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base de Conocimiento - NormaConsult</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 1.8em;
+        }
+
+        .back-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        .search-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .search-btn {
+            padding: 15px 40px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .search-btn:hover {
+            background: #5568d3;
+        }
+
+        .search-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .search-info strong {
+            color: #667eea;
+        }
+
+        .documents-list {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .documents-list h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .document-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: all 0.3s;
+        }
+
+        .document-item:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+
+        .document-name {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .download-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .download-btn:hover {
+            background: #218838;
+        }
+
+        .results-section {
+            display: none;
+        }
+
+        .results-section.active {
+            display: block;
+        }
+
+        .results-header {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 15px 15px 0 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .results-stats {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .results-stats strong {
+            color: #667eea;
+        }
+
+        .results-container {
+            background: white;
+            padding: 0 30px 30px;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .result-card {
+            border: 2px solid #eee;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .result-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.1);
+        }
+
+        .result-doc-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .result-matches {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .match-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .match-line {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 5px;
+        }
+
+        .match-context {
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.5;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px;
+            color: #999;
+            font-size: 1.2em;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📚 Base de Conocimiento</h1>
+        <a href="/" class="back-btn">← Volver al inicio</a>
+    </div>
+
+    <div class="container">
+        <!-- Sección de búsqueda -->
+        <div class="search-section">
+            <h2 style="margin-bottom: 20px; color: #333;">🔍 Buscar en Normativas</h2>
+            
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    class="search-input" 
+                    placeholder="Escribe palabras clave para buscar (ej: aislamiento térmico, resistencia al fuego...)"
+                    onkeypress="handleKeyPress(event)"
+                >
+                <button class="search-btn" onclick="performSearch()">Buscar</button>
+            </div>
+
+            <div class="search-info">
+                <strong>🧠 Nota:</strong> Este buscador utiliza búsqueda semántica inteligente. 
+                Puedes usar lenguaje natural y conceptos relacionados (por ejemplo, buscar "eficiencia energética" encontrará información sobre aislamiento térmico).
+            </div>
+        </div>
+
+        <!-- Lista de documentos disponibles -->
+        <div class="documents-list" id="documents-list">
+            <h2>📄 Documentos Disponibles</h2>
+            <div id="documents-container">
+                <div class="loading">Cargando documentos...</div>
+            </div>
+        </div>
+
+        <!-- Resultados de búsqueda -->
+        <div class="results-section" id="results-section">
+            <div class="results-header">
+                <div class="results-stats" id="results-stats"></div>
+            </div>
+            <div class="results-container" id="results-container"></div>
+        </div>
+    </div>
+
+    <script>
+        // Cargar documentos al iniciar
+        loadDocuments();
+
+        async function loadDocuments() {
+            try {
+                const response = await fetch('/api/normativas/list');
+                const normativas = await response.json();
+
+                const container = document.getElementById('documents-container');
+                
+                if (normativas.length === 0) {
+                    container.innerHTML = '<div class="no-results">No hay documentos disponibles</div>';
+                    return;
+                }
+
+                container.innerHTML = normativas.map(doc => `
+                    <div class="document-item">
+                        <div class="document-name">📄 ${doc.nombre}</div>
+                        <a href="/api/normativas/download/${doc.archivo}" class="download-btn" download>
+                            ⬇️ Descargar
+                        </a>
+                    </div>
+                `).join('');
+            } catch (error) {
+                document.getElementById('documents-container').innerHTML = 
+                    '<div class="no-results">Error al cargar documentos</div>';
+            }
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                performSearch();
+            }
+        }
+
+        async function performSearch() {
+            const query = document.getElementById('search-input').value.trim();
+            
+            if (!query) {
+                alert('Por favor escribe algo para buscar');
+                return;
+            }
+
+            const resultsSection = document.getElementById('results-section');
+            const resultsContainer = document.getElementById('results-container');
+            const resultsStats = document.getElementById('results-stats');
+
+            resultsContainer.innerHTML = '<div class="loading">Buscando...</div>';
+            resultsSection.classList.add('active');
+
+            try {
+                const response = await fetch('/api/normativas/search', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ query })
+                });
+
+                const data = await response.json();
+
+                if (data.results.length === 0) {
+                    resultsStats.innerHTML = `No se encontraron resultados para "<strong>${query}</strong>"`;
+                    resultsContainer.innerHTML = `
+                        <div class="no-results">
+                            😔 No se encontraron coincidencias.<br><br>
+                            Intenta con otras palabras clave o términos más específicos.
+                        </div>
+                    `;
+                    return;
+                }
+
+                resultsStats.innerHTML = `
+                    Se encontraron <strong>${data.results.length}</strong> resultado(s) para "<strong>${query}</strong>"
+                `;
+
+                // Función auxiliar para formatear el contexto
+                function formatContext(context, query) {
+                    if (!context) return '';
+                    // Dividir el contexto en párrafos
+                    const paragraphs = context.split('\n\n');
+                    // Tomar solo los primeros 2 párrafos para no sobrecargar la vista
+                    const relevantParagraphs = paragraphs.slice(0, 2);
+                    // Unir los párrafos con formato HTML
+                    return relevantParagraphs
+                        .map(p => p.trim())
+                        .filter(p => p.length > 0)
+                        .map(p => `<p>${highlightText(p, query)}</p>`)
+                        .join('');
+                }
+
+                resultsContainer.innerHTML = data.results.map(result => `
+                    <div class="result-card">
+                        <div class="result-doc-name">📄 ${result.documento}</div>
+                        <div class="result-matches">
+                            Relevancia: ${(result.relevancia * 100).toFixed(1)}%
+                        </div>
+                        ${result.coincidencias.map(match => `
+                            <div class="match-item">
+                                <div class="match-context">
+                                    ${formatContext(match.context, query)}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `).join('');
+
+            } catch (error) {
+                console.error('Error en la búsqueda:', error);
+                resultsStats.innerHTML = 'Error al realizar la búsqueda';
+                resultsContainer.innerHTML = `
+                    <div class="no-results">
+                        Error al buscar: ${error.message || 'Error desconocido'}
+                        <br><br>
+                        Por favor, inténtalo de nuevo más tarde.
+                    </div>
+                `;
+            }
+        }
+
+        function highlightText(text, query) {
+            const regex = new RegExp(`(${escapeRegex(query)})`, 'gi');
+            return text.replace(regex, '<span class="highlight">$1</span>');
+        }
+
+        function escapeRegex(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+    </script>
+</body>
+</html>

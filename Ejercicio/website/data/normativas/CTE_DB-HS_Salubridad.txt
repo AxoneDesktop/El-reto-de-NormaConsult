@@ -1,0 +1,226 @@
+CTE DB-HS - DOCUMENTO BÁSICO DE SALUBRIDAD
+============================================
+
+SECCIÓN HS 1: PROTECCIÓN FRENTE A LA HUMEDAD
+
+Artículo 1. Grado de impermeabilidad exigible
+
+Los muros y suelos en contacto con el terreno deben tener un grado de impermeabilidad en función de:
+- Presencia de agua
+- Coeficiente de permeabilidad del terreno
+
+Grado 1: Baja presencia de agua
+Grado 2: Media presencia de agua
+Grado 3: Alta presencia de agua
+Grado 4: Muy alta presencia de agua con fuerte presión hidrostática
+
+Artículo 2. Condiciones de las soluciones constructivas de muros
+
+Para un grado de impermeabilidad 3 (situación habitual):
+- Muro de espesor > 24 cm con revestimiento interior (enfoscado + enlucido)
+- O muro con impermeabilización exterior continua
+- Drenaje del terreno perimetral con lámina drenante
+
+SECCIÓN HS 2: RECOGIDA Y EVACUACIÓN DE RESIDUOS
+
+Artículo 3. Espacios para almacenamiento de residuos
+
+En edificios de uso Residencial Vivienda:
+- Superficie mínima del espacio de almacenamiento: 30 dm³ por vivienda
+- Debe estar ventilado
+- Paredes impermeables hasta 1 m de altura
+
+SECCIÓN HS 3: CALIDAD DEL AIRE INTERIOR
+
+Artículo 4. Caudales de ventilación
+
+4.1 Viviendas - Caudales de extracción mínimos (l/s):
+
+Dormitorios: no requieren extracción (admisión)
+Sala de estar y comedores: no requieren extracción (admisión)
+Baños y aseos: 15 l/s por unidad
+Cocinas: 
+  - Con gas: 28 l/s (50 m³/h)
+  - Eléctrica: 8 l/s
+
+4.2 Locales habitables
+
+Para locales con cualquier tipo de actividad, el caudal mínimo de aire exterior de ventilación será de 12,5 l/s por persona.
+
+Artículo 5. Sistemas de ventilación
+
+5.1 Ventilación híbrida:
+Sistema que combina ventilación natural y mecánica.
+La ventilación es natural cuando hay suficiente tiro térmico.
+Cuando el tiro es insuficiente, se activa el sistema mecánico.
+
+5.2 Ventilación mecánica:
+La extracción se produce por medios mecánicos (extractores, ventiladores).
+La admisión puede ser natural (aberturas) o mecánica (sistema de doble flujo).
+
+Artículo 6. Conductos de admisión
+
+6.1 Viviendas:
+Las aberturas de admisión deben disponerse en:
+- Dormitorios
+- Salas de estar
+- Comedores
+
+Superficie mínima de abertura en fachada o carpintería:
+- Habitaciones con ventilación natural: 4 cm²/m² de superficie en planta
+- Habitaciones con extractor: 8 cm²/m²
+
+6.2 Aberturas mixtas:
+Pueden ser regulables o autorregulables en función de la humedad relativa o presión.
+
+Artículo 7. Conductos de extracción
+
+7.1 Los conductos de extracción dispondrán de:
+- Sección uniforme en todo su recorrido
+- Trazado vertical con desviaciones < 20°
+- Remate por encima de la cubierta con aspirador estático o dinámico
+
+7.2 Sección mínima de conductos individuales de extracción:
+- Para caudal de 10 l/s: 35 cm²
+- Para caudal de 15 l/s: 50 cm²
+- Para caudal de 28 l/s: 125 cm²
+
+Artículo 8. Ventilación de baños sin ventana exterior
+
+En baños y aseos sin ventana al exterior es OBLIGATORIO instalar:
+- Sistema de extracción mecánica con caudal mínimo de 15 l/s (54 m³/h)
+- O sistema de admisión y extracción mecánica (ventilación forzada)
+- Funcionamiento automático o manual con extracción durante al menos 15 minutos
+
+8.1 Alternativa: conducto de ventilación natural de sección mínima 125 cm² con tiro térmico garantizado.
+
+Artículo 9. Ventilación de trasteros y almacenes
+
+Los trasteros en plantas bajo rasante deben disponer de:
+- Abertura de ventilación de superficie ≥ 0,5% de la superficie en planta
+- O sistema de ventilación mecánica con caudal ≥ 0,7 l/s·m²
+
+SECCIÓN HS 4: SUMINISTRO DE AGUA
+
+Artículo 10. Condiciones de suministro
+
+10.1 Presión mínima:
+- En grifos: 100 kPa (1 bar)
+- En fluxores y calentadores: 150 kPa (1,5 bar)
+
+10.2 Presión máxima:
+- No debe superar 500 kPa (5 bar)
+- Si la presión de red es superior, se instalará válvula reductora
+
+Artículo 11. Diámetros mínimos de tuberías
+
+Tubería de acometida: DN 25 mm (1") mínimo
+Montantes: DN 20 mm (3/4")
+Derivaciones particulares:
+- WC con cisterna: DN 12 mm
+- WC con fluxor: DN 25 mm
+- Lavabo: DN 12 mm
+- Ducha: DN 12 mm
+- Bañera: DN 15 mm
+- Lavadora: DN 15 mm
+
+Artículo 12. Instalación de agua caliente sanitaria (ACS)
+
+12.1 Temperatura de distribución:
+- Mínimo: 50°C en el punto más alejado
+- Máximo recomendado: 60°C (para evitar Legionella)
+
+12.2 Aislamiento térmico:
+Las tuberías de ACS deben estar aisladas con espesor mínimo:
+- DN ≤ 35 mm: 20 mm de aislamiento
+- DN 35-65 mm: 30 mm de aislamiento
+- DN > 65 mm: 40 mm de aislamiento
+
+SECCIÓN HS 5: EVACUACIÓN DE AGUAS
+
+Artículo 13. Elementos de la red de evacuación
+
+13.1 Diámetros mínimos de sifones y derivaciones individuales:
+
+Lavabo: 32 mm
+Bidé: 32 mm
+Ducha: 40 mm
+Bañera: 40 mm
+Inodoro con cisterna: 100 mm
+Inodoro con fluxor: 100 mm
+Fregadero doméstico: 40 mm
+Lavadero: 40 mm
+Lavadora: 40 mm
+Lavavajillas: 40 mm
+
+13.2 Diámetros de bajantes:
+
+Para un edificio de viviendas:
+- Bajante de aguas residuales: mínimo 110 mm
+- Bajante de aguas pluviales: 75-90 mm (según superficie de cubierta)
+
+Artículo 14. Ventilación de la red de saneamiento
+
+14.1 Las redes de evacuación deben disponer de un sistema de ventilación que permita:
+- El funcionamiento de los cierres hidráulicos (sifones)
+- La circulación del aire en la red
+- La evacuación de gases mefíticos
+
+14.2 Tipos de ventilación:
+- Ventilación primaria: prolongación de la bajante por encima de la cubierta
+- Ventilación secundaria: red de tuberías paralela a la de evacuación
+- Ventilación terciaria: ventilación individual de aparatos
+
+Artículo 15. Arquetas y pozos
+
+15.1 Dimensiones mínimas:
+
+Arqueta sifónica: 38 x 38 cm (interior)
+Arqueta de paso: 38 x 38 cm
+Arqueta de registro: 51 x 51 cm
+Pozo de registro: diámetro 60 cm
+
+15.2 Se dispondrá una arqueta de registro:
+- En cada cambio de dirección
+- En cada encuentro de colectores
+- Cada 15 m en tramos rectos
+
+Artículo 16. Separación de redes
+
+En edificios de nueva construcción es obligatorio separar las redes de:
+- Aguas residuales (fecales y grises)
+- Aguas pluviales
+
+Ambas redes se conectarán en arqueta separadora o en la acometida general.
+
+Artículo 17. Evacuación de aparcamientos
+
+Los garajes y aparcamientos deben disponer de:
+- Sumidero sifónico cada 50 m² de superficie
+- Pendiente mínima del 1% hacia los sumideros
+- Separador de hidrocarburos si evacuan a red pública o terreno
+
+El separador de hidrocarburos debe tener:
+- Capacidad de retención ≥ 100 litros
+- Dispositivo obturador automático
+- Sistema de detección de CO si es cerrado
+
+SECCIÓN HS 6: PROTECCIÓN FRENTE AL RUIDO
+
+(Esta sección está integrada en el DB-HR - Documento Básico de Protección frente al Ruido)
+
+Artículo 18. Valores límite de aislamiento
+
+Aislamiento acústico a ruido aéreo entre locales:
+- Entre viviendas: DnT,A ≥ 50 dBA
+- Entre vivienda y zonas comunes: DnT,A ≥ 50 dBA
+- Entre vivienda y local de actividad: DnT,A ≥ 55 dBA
+
+Aislamiento acústico a ruido de impacto:
+- Entre viviendas superpuestas: L'nT,w ≤ 65 dB
+
+Artículo 19. Instalaciones y equipos
+
+Las instalaciones de los edificios (ascensores, climatización, fontanería) no deben producir en viviendas niveles superiores a:
+- Ruido continuo: 35 dBA (día) / 30 dBA (noche)
+- Ruido discontinuo: 40 dBA (día) / 35 dBA (noche)

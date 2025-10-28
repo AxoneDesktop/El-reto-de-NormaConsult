@@ -1,0 +1,198 @@
+CTE DB-SI - DOCUMENTO BÁSICO DE SEGURIDAD EN CASO DE INCENDIO
+================================================================
+
+SECCIÓN SI 1: PROPAGACIÓN INTERIOR
+
+Artículo 1. Compartimentación en sectores de incendio
+
+Los edificios deben compartimentarse en sectores de incendio según los criterios:
+
+1.1 Superficie construida máxima de cada sector:
+- Uso Residencial Vivienda: 2.500 m²
+- Uso Administrativo: 2.500 m²
+- Uso Docente: 4.000 m²
+- Uso Comercial: 2.500 m²
+- Uso Hospitalario: 1.500 m²
+- Uso Aparcamiento: 2.500 m²
+
+1.2 Los elementos que separan sectores de incendio deben ser:
+- Paredes y techos: resistencia al fuego EI-120 (2 horas)
+- Puertas de paso: resistencia al fuego EI2-60 (60 minutos con cierre automático)
+
+Artículo 2. Resistencia al fuego de la estructura
+
+2.1 Resistencia al fuego de elementos estructurales portantes
+
+La resistencia al fuego de los elementos estructurales portantes debe ser:
+
+Para edificios de altura de evacuación < 15 m (menos de 5 plantas):
+- Estructura principal: R-90 (90 minutos)
+- Forjados: REI-90 (90 minutos)
+- Vigas y soportes: R-90 (90 minutos)
+
+Para edificios de altura de evacuación entre 15 m y 28 m (5-9 plantas):
+- Estructura principal: R-120 (120 minutos)
+- Forjados: REI-120 (120 minutos)
+- Vigas y soportes: R-120 (120 minutos)
+
+Para edificios de altura de evacuación > 28 m (más de 9 plantas):
+- Estructura principal: R-180 (180 minutos)
+- Forjados: REI-180 (180 minutos)
+- Vigas y soportes: R-180 (180 minutos)
+
+2.2 Aparcamientos robotizados y bajo rasante
+
+En aparcamientos en sótano, la resistencia al fuego de la estructura debe ser como mínimo:
+- Forjados que separan el aparcamiento de otros usos: REI-120
+- Estructura del aparcamiento: R-120
+- Rampas de acceso: R-120
+
+Artículo 3. Reacción al fuego de materiales
+
+Los materiales de revestimiento deben tener las siguientes clasificaciones:
+
+3.1 Suelos:
+- Zonas de evacuación: CFL-s1 (suelos con baja propagación de llama)
+- Recintos de riesgo especial: BFL-s1
+- Resto de zonas: EFL
+
+3.2 Paredes y techos:
+- Zonas de evacuación y espacios ocultos: B-s1, d0
+- Aparcamientos: B-s1, d0
+- Recintos de riesgo especial: B-s1, d0
+- Resto de zonas: C-s2, d0
+
+SECCIÓN SI 2: PROPAGACIÓN EXTERIOR
+
+Artículo 4. Distancia entre huecos de fachada
+
+La distancia mínima entre huecos de plantas consecutivas (excepto balcones) debe ser de 1,00 metro, o se debe disponer de elementos de protección (voladizos, aleros) con resistencia al fuego EI-60.
+
+SECCIÓN SI 3: EVACUACIÓN DE OCUPANTES
+
+Artículo 5. Cálculo de ocupación
+
+El número de ocupantes se calcula según los valores de densidad:
+
+Uso Residencial Vivienda: 1 persona / 20 m²
+Uso Administrativo: 1 persona / 10 m²
+Uso Comercial (área de ventas): 1 persona / 2 m²
+Uso Docente (aulas): 1,5 personas / m²
+Uso Público (zonas de espera): 1 persona / 0,5 m²
+
+Artículo 6. Número de salidas y longitud de recorridos
+
+6.1 Número mínimo de salidas:
+- Ocupación < 100 personas: 1 salida
+- Ocupación 100-500 personas: 2 salidas
+- Ocupación > 500 personas: Se añade 1 salida por cada 500 personas adicionales
+
+6.2 Longitud de los recorridos de evacuación:
+- En general: ≤ 50 metros
+- En caso de una única salida: ≤ 25 metros
+- En uso hospitalario: ≤ 35 metros
+
+Artículo 7. Dimensionamiento de elementos de evacuación
+
+7.1 Puertas y pasos:
+- Ancho mínimo: 0,80 m (para menos de 50 personas)
+- Por cada 200 personas adicionales: +0,80 m de anchura
+
+7.2 Pasillos:
+- Ancho mínimo en uso residencial: 1,00 m
+- Ancho mínimo en otros usos: 1,20 m
+
+7.3 Escaleras:
+- Ancho mínimo: 1,00 m (escalera protegida para evacuación descendente)
+- Huella mínima: 28 cm
+- Contrahuella máxima: 18,5 cm
+- Número máximo de peldaños sin descansillo: 16
+- Mesetas de anchura ≥ 1,00 m
+
+7.4 Rampas:
+- Ancho mínimo: 1,00 m
+- Pendiente máxima: 12%
+- En rampas para evacuación de más de 3 m: pendiente máxima 10%
+
+Artículo 8. Puertas en recorridos de evacuación
+
+8.1 Las puertas previstas como salida de planta o de edificio y las de los recorridos de evacuación abrirán en el sentido de la evacuación cuando el número de personas que deban pasar por ella sea más de 50.
+
+8.2 En zonas de uso público, las puertas que abran hacia las zonas de circulación no deben invadir más de la mitad de su anchura útil.
+
+8.3 Las puertas de apertura automática dispondrán de un sistema tal que, en caso de fallo del mecanismo de apertura o del suministro de energía, abra automáticamente la puerta.
+
+SECCIÓN SI 4: INSTALACIONES DE PROTECCIÓN CONTRA INCENDIOS
+
+Artículo 9. Dotación de instalaciones
+
+9.1 Extintores portátiles:
+- Obligatorios en todos los edificios
+- 1 extintor cada 15 m de recorrido como máximo
+- Eficacia mínima: 21A-113B
+
+9.2 Bocas de incendio equipadas (BIE):
+Obligatorias cuando la superficie construida supere:
+- 2.000 m² en uso Comercial o Administrativo
+- 1.000 m² en uso Residencial Público
+- 500 m² en uso Aparcamiento
+
+9.3 Columna seca:
+Obligatoria en edificios cuya altura de evacuación sea superior a 24 metros.
+Toma de agua en fachada accesible a bomberos.
+
+9.4 Sistema de detección y alarma de incendios:
+Obligatorio cuando:
+- Uso Residencial Público: en todos los casos
+- Uso Administrativo: superficie > 2.000 m²
+- Uso Comercial: superficie > 1.000 m²
+
+9.5 Sistemas de extinción automática:
+Obligatorios cuando:
+- Aparcamientos robotizados
+- Zonas de riesgo especial alto
+- Uso hospitalario (zonas de hospitalización)
+- Uso comercial con superficie > 5.000 m²
+
+Artículo 10. Señalización
+
+Todas las salidas de recorridos de evacuación deben estar señalizadas mediante rótulos luminosos o fotoluminiscentes con pictograma normalizado.
+
+La señalización debe ser visible incluso en caso de fallo del alumbrado normal.
+
+SECCIÓN SI 5: INTERVENCIÓN DE BOMBEROS
+
+Artículo 11. Condiciones de aproximación y entorno
+
+Los viales de aproximación a los edificios deben permitir el acceso de vehículos del servicio de extinción de incendios:
+- Anchura libre mínima: 3,50 m
+- Altura libre mínima: 4,50 m
+- Capacidad portante: 20 kN/m²
+
+Artículo 12. Accesibilidad por fachada
+
+Cuando la altura de evacuación del edificio exceda de 9 m, las fachadas deben disponer de huecos que permitan el acceso desde el exterior al personal del servicio de extinción de incendios:
+- Dimensiones mínimas: 0,80 m x 1,20 m
+- Altura del alféizar: ≤ 1,20 m
+- Distancia máxima entre huecos consecutivos: 25 m
+
+SECCIÓN SI 6: RESISTENCIA AL FUEGO DE LA ESTRUCTURA
+
+Artículo 13. Clasificación REI
+
+R: Resistencia mecánica (capacidad portante)
+E: Estanqueidad al fuego (paso de llamas y gases calientes)
+I: Aislamiento térmico (limitación de temperatura en cara no expuesta)
+
+Ejemplo: REI-120 significa que el elemento mantiene las tres propiedades durante 120 minutos.
+
+Para elementos solo portantes (pilares, vigas sin función separadora): R-120
+Para elementos separadores portantes (forjados, muros cortafuego): REI-120
+
+Artículo 14. Inspección y mantenimiento
+
+Las instalaciones de protección contra incendios deben ser mantenidas según el Reglamento de Instalaciones de Protección contra Incendios:
+- Extintores: revisión anual
+- Columna seca: revisión semestral
+- BIE: revisión trimestral
+- Sistemas de detección: revisión trimestral

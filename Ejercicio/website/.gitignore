@@ -1,0 +1,38 @@
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Archivos de configuración
+.env
+
+# Caché de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+__MACOSX/
+*.swp
+*.swo
+
+# IDEs y editores
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Logs y bases de datos
+*.log
+*.sqlite
+*.db
+
+# Directorios de distribución
+dist/
+build/
+*.egg-info/

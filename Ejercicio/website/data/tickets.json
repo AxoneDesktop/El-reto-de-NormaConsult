@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "cliente": "Constructora Mediterráneo S.L.",
+    "consulta": "Estamos planificando un edificio residencial de 6 plantas en zona climática D3. Necesitamos saber cuál es el espesor mínimo de aislamiento térmico requerido para las fachadas según el CTE. ¿Nos podríais confirmar los valores exactos?",
+    "status": "pendiente",
+    "fecha_creacion": "2024-01-15T09:30:00",
+    "respuesta": null,
+    "fecha_respuesta": null
+  },
+  {
+    "id": 2,
+    "cliente": "Arquitectos Gómez y Asociados",
+    "consulta": "Tenemos dudas sobre la resistencia al fuego de un forjado en un edificio de uso administrativo de 4 plantas. ¿Cuál es la clasificación REI mínima exigida? Además, ¿hay diferencias si una de las plantas es sótano de aparcamiento?",
+    "status": "pendiente",
+    "fecha_creacion": "2024-01-16T11:15:00",
+    "respuesta": null,
+    "fecha_respuesta": null
+  },
+  {
+    "id": 3,
+    "cliente": "Promociones Urbanas del Sur",
+    "consulta": "En un proyecto de viviendas unifamiliares, ¿es obligatorio instalar sistemas de ventilación mecánica en los baños que no tienen ventana al exterior? ¿Qué caudales mínimos debemos garantizar según normativa?",
+    "status": "pendiente",
+    "fecha_creacion": "2024-01-16T14:45:00",
+    "respuesta": null,
+    "fecha_respuesta": null
+  },
+  {
+    "id": 4,
+    "cliente": "IngenierIa Técnica Andaluza",
+    "consulta": "Necesitamos confirmar las dimensiones mínimas para una escalera de evacuación en un edificio de uso público (centro comercial). Específicamente: ancho mínimo, huella y contrahuella. Gracias.",
+    "status": "en-proceso",
+    "fecha_creacion": "2024-01-17T10:00:00",
+    "respuesta": null,
+    "fecha_respuesta": null
+  },
+  {
+    "id": 5,
+    "cliente": "Reformas Integrales Sevilla",
+    "consulta": "Vamos a rehabilitar un edificio antiguo y queremos saber si es obligatorio mejorar el aislamiento acústico entre viviendas. El edificio es de 1975 y no cumple con la normativa actual. ¿Hay alguna exención por ser rehabilitación?",
+    "status": "pendiente",
+    "fecha_creacion": "2024-01-17T15:20:00",
+    "respuesta": null,
+    "fecha_respuesta": null
+  },
+  {
+    "id": 6,
+    "cliente": "Constructora Bahía",
+    "consulta": "¿Cuál es la pendiente máxima permitida para rampas accesibles en edificios de uso público? Tenemos un desnivel de 90cm y queremos saber la longitud mínima de rampa necesaria.",
+    "status": "resuelto",
+    "fecha_creacion": "2024-01-10T09:00:00",
+    "respuesta": "Según el DB-SUA (Seguridad de Utilización y Accesibilidad) del CTE, la pendiente máxima admitida para rampas accesibles depende de la longitud del tramo:\n\n- Tramos de hasta 3m: pendiente máxima del 10%\n- Tramos de 3m a 6m: pendiente máxima del 8%\n- Tramos de 6m a 9m: pendiente máxima del 6%\n- Tramos de más de 9m: pendiente máxima del 4%\n\nPara vuestro desnivel de 90cm (0,9m), podéis utilizar una rampa de hasta 3m de longitud con pendiente del 10%, lo que daría una longitud de 9 metros. Alternativamente, para mayor comodidad, podríais hacer una rampa de 11,25m con pendiente del 8%.\n\nRecordad que las rampas deben tener pasamanos a ambos lados y, si tienen más de 6m de longitud, deberán tener descansos intermedios de al menos 1,50m.",
+    "fecha_respuesta": "2024-01-11T10:30:00"
+  },
+  {
+    "id": 7,
+    "cliente": "Estudio de Arquitectura López",
+    "consulta": "Cliente con un local comercial en planta baja pregunta si necesita instalar un aseo adaptado para personas con movilidad reducida. El local tiene 80m2 y está destinado a tienda de ropa. ¿Es obligatorio?",
+    "status": "resuelto",
+    "fecha_creacion": "2024-01-12T11:30:00",
+    "respuesta": "Según el DB-SUA del CTE, en establecimientos de uso público es obligatorio disponer de al menos un aseo accesible por cada 10 unidades o fracción de inodoros instalados, con un mínimo de uno por cada sexo.\n\nPara locales comerciales, se considera que debe haber como mínimo un aseo accesible cuando:\n- El local supera los 100m2 de superficie útil, o\n- Tiene más de 6 asientos destinados al público\n\nEn vuestro caso, con 80m2, técnicamente no sería obligatorio. Sin embargo, es muy recomendable instalarlo por las siguientes razones:\n\n1. Mejora la accesibilidad y puede ampliar vuestra clientela\n2. Si en el futuro ampliáis el local, ya lo tendréis\n3. Algunas ordenanzas municipales pueden ser más restrictivas que el CTE\n\nOs recomiendo consultar también con el ayuntamiento local, ya que pueden tener requisitos adicionales.",
+    "fecha_respuesta": "2024-01-13T09:15:00"
+  },
+  {
+    "id": 8,
+    "cliente": "Arquitectura Sostenible Plus",
+    "consulta": "¿Qué certificado energético mínimo debe tener un edificio de nueva construcción destinado a viviendas? ¿Varía según la zona climática? Nuestro proyecto está en Almería.",
+    "status": "pendiente",
+    "fecha_creacion": "2024-01-18T08:45:00",
+    "respuesta": null,
+    "fecha_respuesta": null
+  },
+  {
+    "id": 9,
+    "cliente": "Proyectos de Ingeniería del Norte",
+    "consulta": "Estamos diseñando la instalación contra incendios de un edificio de oficinas de 8 plantas. ¿A partir de qué altura es obligatorio instalar columna seca? ¿Y sistemas de extinción automática?",
+    "status": "pendiente",
+    "fecha_creacion": "2024-01-18T12:00:00",
+    "respuesta": null,
+    "fecha_respuesta": null
+  },
+  {
+    "id": 10,
+    "cliente": "Construcciones Martínez Hermanos",
+    "consulta": "Vamos a construir viviendas adosadas con garaje en sótano. ¿Es necesario instalar sistema de detección de CO en el garaje? ¿Qué requisitos de ventilación tiene que cumplir?",
+    "status": "en-proceso",
+    "fecha_creacion": "2024-01-19T10:30:00",
+    "respuesta": null,
+    "fecha_respuesta": null
+  },
+  {
+    "id": 11,
+    "cliente": "Reformas Express Barcelona",
+    "consulta": "Un cliente quiere cerrar una terraza de 15m2 en un piso. ¿Necesita licencia de obras? ¿Tiene que cumplir algún requisito especial de aislamiento o seguridad?",
+    "status": "resuelto",
+    "fecha_creacion": "2024-01-08T14:20:00",
+    "respuesta": "Cerrar una terraza es considerado un cambio en la envolvente del edificio, por lo que SÍ requiere licencia de obras mayor en la mayoría de los municipios. Los pasos a seguir son:\n\n1. Comprobar que las ordenanzas municipales y estatutos de la comunidad lo permiten\n2. Solicitar licencia de obras en el Ayuntamiento con proyecto firmado por técnico competente\n3. Cumplir con el CTE en cuanto a:\n   - DB-HE: Aislamiento térmico adecuado para la zona climática\n   - DB-HS: Carpinterías con clasificación de permeabilidad al aire adecuada\n   - DB-SE-AE: Resistencia al viento de las carpinterías\n\nAdemás, al cerrar la terraza:\n- Cambia la superficie construida del inmueble (puede afectar al IBI)\n- Puede cambiar la calificación energética\n- Hay que actualizar el catastro\n\nMi recomendación: No hacerlo sin licencia. Las sanciones pueden ser muy elevadas y el ayuntamiento puede ordenar derribar lo construido.",
+    "fecha_respuesta": "2024-01-09T16:45:00"
+  },
+  {
+    "id": 12,
+    "cliente": "Desarrollos Inmobiliarios Costa",
+    "consulta": "¿Cuál es la superficie mínima exigible para un dormitorio en viviendas de nueva construcción? ¿Y para un baño completo?",
+    "status": "pendiente",
+    "fecha_creacion": "2024-01-19T16:00:00",
+    "respuesta": null,
+    "fecha_respuesta": null
+  }
+]

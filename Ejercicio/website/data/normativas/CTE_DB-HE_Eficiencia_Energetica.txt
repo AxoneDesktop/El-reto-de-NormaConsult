@@ -1,0 +1,121 @@
+CTE DB-HE - DOCUMENTO BÁSICO DE AHORRO DE ENERGÍA
+====================================================
+
+SECCIÓN HE 1: LIMITACIÓN DE LA DEMANDA ENERGÉTICA
+
+Artículo 1. Ámbito de aplicación
+
+Esta Sección es de aplicación en:
+a) edificios de nueva construcción y ampliaciones de edificios existentes
+b) edificaciones o partes de las mismas que, por sus características de utilización, estén abiertas de forma permanente
+c) edificios existentes que se reformen cuando se renueve más del 25% de la superficie total de su envolvente térmica final
+
+Artículo 2. Procedimiento de verificación
+
+La limitación de la demanda energética de los edificios se satisface mediante el cumplimiento de:
+a) control solar de la envolvente térmica del edificio
+b) limitación de descompensaciones en la calidad térmica de los diferentes espacios
+c) limitación de condensaciones superficiales e intersticiales
+d) permeabilidad al aire de los huecos y lucernarios de la envolvente térmica
+
+Artículo 3. Transmitancia térmica de la envolvente
+
+3.1 Muros de fachada
+
+Los valores máximos de transmitancia térmica U (W/m²K) para muros de fachada según zona climática:
+
+Zona climática A: U ≤ 1,35 W/m²K
+Zona climática B: U ≤ 1,25 W/m²K
+Zona climática C: U ≤ 1,00 W/m²K
+Zona climática D: U ≤ 0,75 W/m²K
+Zona climática E: U ≤ 0,60 W/m²K
+
+Para la zona climática D3, típica del interior peninsular, se recomienda un espesor de aislamiento térmico de entre 6 y 8 cm de poliestireno expandido (EPS) o equivalente para cumplir con U ≤ 0,75 W/m²K.
+
+3.2 Cubiertas
+
+Los valores máximos de transmitancia térmica para cubiertas en contacto con el aire exterior:
+
+Zona climática A: U ≤ 1,20 W/m²K
+Zona climática B: U ≤ 0,80 W/m²K
+Zona climática C: U ≤ 0,65 W/m²K
+Zona climática D: U ≤ 0,50 W/m²K
+Zona climática E: U ≤ 0,40 W/m²K
+
+3.3 Suelos
+
+En suelos en contacto con el terreno o con espacios no habitables, los valores de transmitancia térmica serán:
+
+Zona climática A: U ≤ 1,25 W/m²K
+Zona climática B: U ≤ 1,10 W/m²K
+Zona climática C: U ≤ 0,65 W/m²K
+Zona climática D: U ≤ 0,50 W/m²K
+Zona climática E: U ≤ 0,40 W/m²K
+
+Artículo 4. Huecos y lucernarios
+
+4.1 Los huecos (ventanas y puertas) deberán tener las siguientes transmitancias térmicas máximas:
+
+Zona climática D: U ≤ 3,50 W/m²K para ventanas
+Zona climática D: U ≤ 2,70 W/m²K para lucernarios
+
+4.2 El factor solar modificado de los huecos y lucernarios de las fachadas oeste y este no superará los valores establecidos en la tabla 2.4.
+
+4.3 Las carpinterías de los huecos y lucernarios tendrán una permeabilidad al aire clase 2 o superior según UNE-EN 12207.
+
+Artículo 5. Control solar
+
+En la zona climática D, para orientaciones Este y Oeste, el factor solar modificado no superará:
+- Para uso residencial privado: 0,70
+- Para uso terciario: 0,55
+
+Se admiten protecciones solares móviles (persianas, cortinas) o fijas (voladizos, lamas).
+
+Artículo 6. Certificación energética
+
+Todos los edificios de nueva construcción deberán obtener una calificación energética mínima:
+- Letra D para edificios residenciales
+- Letra C para edificios terciarios
+
+La certificación se realizará mediante el programa CE3X, HULC o equivalente reconocido oficialmente.
+
+Artículo 7. Edificios existentes en rehabilitación
+
+Cuando se realice una renovación de más del 25% de la envolvente térmica, será obligatorio:
+a) Mejorar la eficiencia energética del edificio en al menos un 30%
+b) Cumplir con los valores de transmitancia térmica de edificios nuevos, o
+c) Reducir el consumo de energía primaria no renovable en un 30%
+
+Artículo 8. Condensaciones
+
+8.1 Condensaciones superficiales
+
+Para evitar problemas de condensaciones superficiales, el factor de temperatura de la superficie interior fRsi deberá ser superior a 0,52 en la zona climática D.
+
+8.2 Condensaciones intersticiales
+
+La cantidad de agua condensada no debe ser superior a la cantidad evaporada en cada período anual. No se admiten condensaciones cuando puedan producir daños en elementos constructivos.
+
+Artículo 9. Puentes térmicos
+
+Los puentes térmicos integrados en la envolvente térmica se deben tratar de forma que se limite:
+a) el riesgo de condensaciones superficiales
+b) la aparición de moho
+c) las pérdidas energéticas
+
+Artículo 10. Zonas climáticas de España
+
+España se divide en 5 zonas climáticas según severidad climática (A, B, C, D, E):
+
+Zona A: Muy cálida (Almería, Málaga costa, Cádiz costa, Melilla)
+Zona B: Cálida (Sevilla, Córdoba, Huelva, Murcia, Valencia costa)
+Zona C: Templada (Madrid, Toledo, Ciudad Real, Valencia interior)
+Zona D: Fría (Ávila, Segovia, Soria, Burgos, Palencia)
+Zona E: Muy fría (León montaña, Teruel montaña, zonas de alta montaña)
+
+Cada zona tiene subdivisiones (1, 2, 3, 4) según la severidad del verano.
+Ejemplo: D3 = zona fría con verano de severidad 3
+
+Artículo 11. Mantenimiento
+
+Los propietarios de los edificios deberán mantener los elementos de la envolvente térmica en condiciones de garantizar su eficiencia energética. Se recomienda una revisión cada 5 años.
