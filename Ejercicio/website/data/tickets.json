@@ -3,10 +3,10 @@
     "id": 1,
     "cliente": "Constructora Mediterráneo S.L.",
     "consulta": "Estamos planificando un edificio residencial de 6 plantas en zona climática D3. Necesitamos saber cuál es el espesor mínimo de aislamiento térmico requerido para las fachadas según el CTE. ¿Nos podríais confirmar los valores exactos?",
-    "status": "pendiente",
+    "status": "resuelto",
     "fecha_creacion": "2024-01-15T09:30:00",
-    "respuesta": null,
-    "fecha_respuesta": null
+    "respuesta": "Según el DB-SUA (Seguridad de Utilización y Accesibilidad) del CTE, la pendiente máxima admitida para rampas accesibles depende de la longitud del tramo:\n\n- Tramos de hasta 3m: pendiente máxima del 10%\n- Tramos de 3m a 6m: pendiente máxima del 8%\n- Tramos de 6m a 9m: pendiente máxima del 6%\n- Tramos de más de 9m: pendiente máxima del 4%\n\nPara vuestro desnivel de 90cm (0,9m), podéis utilizar una rampa de hasta 3m de longitud con pendiente del 10%, lo que daría una longitud de 9 metros. Alternativamente, para mayor comodidad, podríais hacer una rampa de 11,25m con pendiente del 8%.\n\nRecordad que las rampas deben tener pasamanos a ambos lados y, si tienen más de 6m de longitud, deberán tener descansos intermedios de al menos 1,50m.",
+    "fecha_respuesta": "2025-10-29T18:08:27.698782"
   },
   {
     "id": 2,

@@ -239,6 +239,11 @@
             outline: none;
             border-color: #667eea;
         }
+        
+        textarea.highlight {
+            background-color: #fff3cd !important;
+            transition: background-color 0.3s ease;
+        }
 
         .actions {
             display: flex;
@@ -327,15 +332,24 @@
             </div>
 
             <div class="section" id="similar-tickets-section" style="display: none;">
-                <div class="section-title">🔍 Tickets Similares</div>
+                <div class="section-title">🔍 Tickets Similares Resueltos</div>
                 <div class="section-content" id="similar-tickets"></div>
             </div>
 
             <div class="section">
-                <div class="section-title">✍️ Respuesta</div>
-                <div class="suggestion-actions" style="margin-bottom: 10px;">
-                    <button class="btn btn-secondary" onclick="generateSuggestion()">Generar Sugerencia</button>
+                <div class="section-title">🔍 Búsqueda de Tickets Similares</div>
+                <div class="search-actions" style="margin-bottom: 15px;">
+                    <button class="btn btn-secondary" onclick="buscarTicketsSimilares()" id="btn-buscar-similares">
+                        🔄 Buscar Tickets Similares
+                    </button>
+                    <span id="search-status" style="margin-left: 10px; color: #666; display: none;">
+                        <i class="loading-spinner"></i> Buscando tickets similares...
+                    </span>
                 </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">✍️ Respuesta</div>
                 <textarea id="modal-respuesta" placeholder="Escribe aquí la respuesta para el cliente..."></textarea>
             </div>
 
@@ -343,6 +357,23 @@
                 <button class="btn btn-primary" onclick="saveResponse()">Guardar Respuesta</button>
                 <button class="btn btn-secondary" onclick="closeModal()">Cancelar</button>
             </div>
+
+            <style>
+                .loading-spinner {
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    border: 3px solid rgba(0,0,0,.1);
+                    border-radius: 50%;
+                    border-top-color: #667eea;
+                    animation: spin 1s ease-in-out infinite;
+                    vertical-align: middle;
+                }
+
+                @keyframes spin {
+                    to { transform: rotate(360deg); }
+                }
+            </style>
         </div>
     </div>
 
@@ -406,26 +437,11 @@
                 document.getElementById('modal-consulta').textContent = ticket.consulta;
                 document.getElementById('modal-respuesta').value = ticket.respuesta || '';
 
-                // Mostrar tickets similares si existen
+                // Limpiar y ocultar la sección de tickets similares
                 const similarTicketsSection = document.getElementById('similar-tickets-section');
                 const similarTicketsContainer = document.getElementById('similar-tickets');
-                
-                if (ticket.similar_tickets && ticket.similar_tickets.length > 0) {
-                    similarTicketsContainer.innerHTML = ticket.similar_tickets.map(st => `
-                        <div class="similar-ticket" style="margin-bottom: 15px; padding: 10px; background: #fff; border-radius: 5px; border: 1px solid #ddd;">
-                            <div style="font-weight: bold; margin-bottom: 5px;">Ticket #${st.id} - ${st.cliente}</div>
-                            <div style="margin-bottom: 5px;"><strong>Consulta:</strong> ${st.consulta}</div>
-                            <div><strong>Respuesta:</strong> ${st.respuesta}</div>
-                            <button class="btn btn-secondary" style="margin-top: 10px;" 
-                                    onclick="useResponse('${st.respuesta.replace(/'/g, "\\'")}')">
-                                Usar esta respuesta
-                            </button>
-                        </div>
-                    `).join('');
-                    similarTicketsSection.style.display = 'block';
-                } else {
-                    similarTicketsSection.style.display = 'none';
-                }
+                similarTicketsSection.style.display = ticket.status === 'resuelto' ? 'none' : 'block';
+                similarTicketsContainer.innerHTML = '';  // Limpiar resultados anteriores
 
                 document.getElementById('ticket-modal').classList.add('active');
             } catch (error) {
@@ -433,30 +449,75 @@
             }
         }
 
-        function useResponse(response) {
-            document.getElementById('modal-respuesta').value = response;
-        }
-
-        async function generateSuggestion() {
+        async function buscarTicketsSimilares() {
             const consulta = document.getElementById('modal-consulta').textContent;
+            const searchStatus = document.getElementById('search-status');
+            const btnBuscar = document.getElementById('btn-buscar-similares');
+            const similarTicketsSection = document.getElementById('similar-tickets-section');
+            const similarTicketsContainer = document.getElementById('similar-tickets');
+
             try {
-                const response = await fetch('/api/normativas/suggest_response', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        query: consulta
-                    })
-                });
-                
+                // Mostrar estado de carga
+                searchStatus.style.display = 'inline';
+                btnBuscar.disabled = true;
+
+                const response = await fetch(`/api/tickets/${currentTicketId}/similar`);
                 const data = await response.json();
-                if (data.suggested_response) {
-                    document.getElementById('modal-respuesta').value = data.suggested_response;
+
+                if (data.similar_tickets && data.similar_tickets.length > 0) {
+                    similarTicketsContainer.innerHTML = `
+                        <div style="margin-bottom: 10px; color: #666;">
+                            Se encontraron ${data.similar_tickets.length} tickets similares ya resueltos que pueden ayudarte:
+                        </div>
+                        ${data.similar_tickets.map(st => `
+                            <div class="similar-ticket" style="margin-bottom: 15px; padding: 10px; background: #fff; border-radius: 5px; border: 1px solid #ddd;">
+                                <div style="font-weight: bold; margin-bottom: 5px;">
+                                    Ticket #${st.id} - ${st.cliente}
+                                    <span style="float: right; color: #28a745;">✓ Resuelto (Score: ${(st.similarity_score * 100).toFixed(1)}%)</span>
+                                </div>
+                                <div style="margin-bottom: 5px;">
+                                    <strong>Consulta:</strong> ${st.consulta}
+                                </div>
+                                <div style="margin-bottom: 10px;">
+                                    <strong>Respuesta:</strong> ${st.respuesta}
+                                </div>
+                                <button class="btn btn-secondary" style="margin-top: 10px;" 
+                                        onclick='useResponse(${JSON.stringify(st.respuesta)})'>
+                                    📋 Usar esta respuesta como base
+                                </button>
+                            </div>
+                        `).join('')}
+                    `;
+                    similarTicketsSection.style.display = 'block';
+                } else {
+                    similarTicketsContainer.innerHTML = `
+                        <div style="color: #666; text-align: center; padding: 20px;">
+                            No se encontraron tickets similares resueltos.
+                        </div>
+                    `;
                 }
             } catch (error) {
-                alert('Error al generar sugerencia');
+                console.error('Error:', error);
+                alert('Error al buscar tickets similares');
+            } finally {
+                // Ocultar estado de carga
+                searchStatus.style.display = 'none';
+                btnBuscar.disabled = false;
             }
+        }
+
+        function useResponse(response) {
+            const textarea = document.getElementById('modal-respuesta');
+            textarea.value = response;
+            
+            // Hacer scroll hasta el área de respuesta
+            textarea.scrollIntoView({ behavior: 'smooth' });
+            
+            // Añadir efecto visual para mostrar que se ha actualizado
+            textarea.classList.add('highlight');
+            setTimeout(() => {
+                textarea.classList.remove('highlight');
+            }, 1000);
         }
 
         function closeModal() {
