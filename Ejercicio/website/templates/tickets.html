@@ -465,36 +465,53 @@
                 const data = await response.json();
 
                 if (data.similar_tickets && data.similar_tickets.length > 0) {
+                    const bestMatch = data.similar_tickets[0]; // Solo el más relevante
+                    const relevancia = (bestMatch.similarity_score * 100).toFixed(0);
+                    
                     similarTicketsContainer.innerHTML = `
-                        <div style="margin-bottom: 10px; color: #666;">
-                            Se encontraron ${data.similar_tickets.length} tickets similares ya resueltos que pueden ayudarte:
-                        </div>
-                        ${data.similar_tickets.map(st => `
-                            <div class="similar-ticket" style="margin-bottom: 15px; padding: 10px; background: #fff; border-radius: 5px; border: 1px solid #ddd;">
-                                <div style="font-weight: bold; margin-bottom: 5px;">
-                                    Ticket #${st.id} - ${st.cliente}
-                                    <span style="float: right; color: #28a745;">✓ Resuelto (Score: ${(st.similarity_score * 100).toFixed(1)}%)</span>
+                        <div style="margin-bottom: 15px; padding: 15px; background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%); border-radius: 10px; border-left: 5px solid #4caf50;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                <div style="font-weight: bold; font-size: 1.1em; color: #2e7d32;">
+                                    🎯 Ticket más relevante encontrado
                                 </div>
-                                <div style="margin-bottom: 5px;">
-                                    <strong>Consulta:</strong> ${st.consulta}
+                                <div style="background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%); color: white; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 0.9em;">
+                                    ⭐ Relevancia: ${relevancia}%
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom: 10px; padding: 12px; background: white; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+                                <div style="color: #666; font-size: 0.85em; margin-bottom: 5px;">
+                                    Ticket #${bestMatch.id} - ${bestMatch.cliente}
                                 </div>
                                 <div style="margin-bottom: 10px;">
-                                    <strong>Respuesta:</strong> ${st.respuesta}
+                                    <strong style="color: #555;">📋 Consulta similar:</strong>
+                                    <div style="color: #333; margin-top: 5px; line-height: 1.6;">${bestMatch.consulta}</div>
                                 </div>
-                                <button class="btn btn-secondary" style="margin-top: 10px;" 
-                                        onclick='useResponse(${JSON.stringify(st.respuesta)})'>
-                                    📋 Usar esta respuesta como base
-                                </button>
                             </div>
-                        `).join('')}
+                            
+                            <div style="margin-bottom: 15px; padding: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+                                <strong style="color: #4caf50;">✅ Respuesta dada:</strong>
+                                <div style="color: #333; margin-top: 8px; line-height: 1.7; text-align: justify;">${bestMatch.respuesta}</div>
+                            </div>
+                            
+                            <button class="btn btn-secondary" style="width: 100%; padding: 12px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: transform 0.2s;" 
+                                    onmouseover="this.style.transform='translateY(-2px)'"
+                                    onmouseout="this.style.transform='translateY(0)'"
+                                    onclick='useResponse(${JSON.stringify(bestMatch.respuesta)})'>
+                                📋 Usar esta respuesta como base
+                            </button>
+                        </div>
                     `;
                     similarTicketsSection.style.display = 'block';
                 } else {
                     similarTicketsContainer.innerHTML = `
-                        <div style="color: #666; text-align: center; padding: 20px;">
-                            No se encontraron tickets similares resueltos.
+                        <div style="color: #666; text-align: center; padding: 30px; background: #f8f9fa; border-radius: 10px;">
+                            <div style="font-size: 3em; margin-bottom: 10px;">🔍</div>
+                            <div style="font-size: 1.1em;">No se encontraron tickets similares resueltos.</div>
+                            <div style="font-size: 0.9em; margin-top: 5px; color: #999;">Esta consulta parece ser única.</div>
                         </div>
                     `;
+                    similarTicketsSection.style.display = 'block';
                 }
             } catch (error) {
                 console.error('Error:', error);

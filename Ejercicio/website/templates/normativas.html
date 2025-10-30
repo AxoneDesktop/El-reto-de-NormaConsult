@@ -187,58 +187,79 @@
         }
 
         .result-card {
-            border: 2px solid #eee;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
             transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.15);
+            border-left: 5px solid #667eea;
         }
 
         .result-card:hover {
-            border-color: #667eea;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.25);
         }
 
         .result-doc-name {
-            font-size: 1.2em;
+            font-size: 1.4em;
             font-weight: bold;
             color: #667eea;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .result-matches {
-            color: #666;
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
             margin-bottom: 15px;
         }
 
         .match-item {
-            background: #f8f9fa;
-            padding: 15px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 20px;
             border-left: 4px solid #667eea;
-            margin-bottom: 10px;
-            border-radius: 5px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
         .match-line {
             color: #333;
-            line-height: 1.6;
+            line-height: 1.8;
             margin-bottom: 5px;
+            font-size: 1.05em;
         }
 
         .match-context {
-            color: #666;
-            font-size: 0.9em;
-            line-height: 1.5;
+            color: #555;
+            font-size: 1em;
+            line-height: 1.8;
             margin-top: 10px;
             padding-top: 10px;
-            border-top: 1px solid #ddd;
+            border-top: 2px dashed #e0e0e0;
+        }
+
+        .match-context p {
+            margin-bottom: 12px;
+            text-align: justify;
         }
 
         .highlight {
-            background: #fff3cd;
-            padding: 2px 4px;
+            background: #ffeb3b;
+            padding: 2px 6px;
             border-radius: 3px;
             font-weight: bold;
+            text-decoration: underline;
+            text-decoration-color: #f57c00;
+            text-decoration-thickness: 2px;
         }
 
         .no-results {
@@ -394,9 +415,11 @@
 
                 resultsContainer.innerHTML = data.results.map(result => `
                     <div class="result-card">
-                        <div class="result-doc-name">📄 ${result.documento}</div>
+                        <div class="result-doc-name">
+                            📄 ${result.documento.replace(/_/g, ' ')}
+                        </div>
                         <div class="result-matches">
-                            Relevancia: ${(result.relevancia * 100).toFixed(1)}%
+                            ⭐ Relevancia: ${(result.relevancia * 100).toFixed(0)}%
                         </div>
                         ${result.coincidencias.map(match => `
                             <div class="match-item">
@@ -422,8 +445,24 @@
         }
 
         function highlightText(text, query) {
-            const regex = new RegExp(`(${escapeRegex(query)})`, 'gi');
-            return text.replace(regex, '<span class="highlight">$1</span>');
+            // Dividir la consulta en palabras individuales
+            const words = query.toLowerCase().split(/\s+/).filter(w => w.length > 3);
+            
+            let highlightedText = text;
+            
+            // Resaltar cada palabra de la consulta
+            words.forEach(word => {
+                const regex = new RegExp(`(${escapeRegex(word)})`, 'gi');
+                highlightedText = highlightedText.replace(regex, '<span class="highlight">$1</span>');
+            });
+            
+            // También resaltar la frase completa si es posible
+            if (query.length > 3) {
+                const regex = new RegExp(`(${escapeRegex(query)})`, 'gi');
+                highlightedText = highlightedText.replace(regex, '<span class="highlight">$1</span>');
+            }
+            
+            return highlightedText;
         }
 
         function escapeRegex(string) {

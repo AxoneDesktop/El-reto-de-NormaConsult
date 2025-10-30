@@ -6,8 +6,10 @@ from rag_engine import RAGEngine
 
 app = Flask(__name__)
 
-# Ruta de datos
-TICKETS_FILE = 'data/tickets.json'
+# Rutas de datos (usar rutas absolutas)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+TICKETS_FILE = os.path.join(BASE_DIR, 'data', 'tickets.json')
+NORMATIVAS_DIR = os.path.join(BASE_DIR, 'data', 'normativas')
 
 # Inicializar el motor RAG
 rag_engine = None
@@ -15,8 +17,8 @@ rag_engine = None
 def initialize_rag():
     global rag_engine
     if rag_engine is None:
-        print("Inicializando motor RAG para tickets similares...")
-        rag_engine = RAGEngine(TICKETS_FILE)
+        print("Inicializando motor RAG...")
+        rag_engine = RAGEngine(NORMATIVAS_DIR, TICKETS_FILE)
         print("Motor RAG inicializado correctamente")
 
 # Cargar tickets
@@ -94,11 +96,111 @@ def update_ticket(ticket_id):
     
     return jsonify({'error': 'Ticket no encontrado'}), 404
 
+# ============= SISTEMA DE NORMATIVAS =============
+
+@app.route('/normativas')
+def normativas_page():
+    return render_template('normativas.html')
+
+@app.route('/api/normativas/list', methods=['GET'])
+def list_normativas():
+    """Lista todos los documentos de normativas disponibles"""
+    normativas = []
+    
+    if os.path.exists(NORMATIVAS_DIR):
+        for filename in os.listdir(NORMATIVAS_DIR):
+            if filename.endswith('.txt'):
+                normativas.append({
+                    'nombre': filename.replace('.txt', '').replace('_', ' '),
+                    'archivo': filename
+                })
+    
+    return jsonify(normativas)
+
+@app.route('/api/normativas/search', methods=['POST'])
+def search_normativas():
+    """Buscar en normativas usando RAG"""
+    data = request.json
+    query = data.get('query', '').strip()
+    
+    if not query:
+        return jsonify({'error': 'Query vacío', 'results': []}), 400
+    
+    if not rag_engine:
+        return jsonify({'error': 'RAG engine no inicializado', 'results': []}), 500
+    
+    try:
+        print(f"Búsqueda recibida: '{query}'")
+        
+        # Buscar normativas similares
+        normativas_results = rag_engine.search_normativas(query)
+        
+        print(f"Resultados encontrados: {len(normativas_results)}")
+        
+        # Formatear resultados para el frontend
+        formatted_results = []
+        for result in normativas_results:
+            formatted_results.append({
+                'documento': result['documento'],
+                'relevancia': result.get('similarity_score', 0),
+                'score': result.get('score', 0),
+                'coincidencias': [{
+                    'context': result['contenido'],
+                    'line_number': 1
+                }]
+            })
+        
+        return jsonify({
+            'query': query,
+            'results': formatted_results
+        })
+        
+    except Exception as e:
+        print(f"Error en búsqueda de normativas: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({
+            'error': str(e),
+            'results': []
+        }), 500
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/tickets', methods=['POST'])
+def create_ticket():
+    """Crear un nuevo ticket"""
+    data = request.json
+    tickets = load_tickets()
+    
+    # Generar nuevo ID
+    next_id = max([t['id'] for t in tickets], default=0) + 1
+    
+    new_ticket = {
+        'id': next_id,
+        'cliente': data.get('cliente', ''),
+        'consulta': data.get('consulta', ''),
+        'status': 'pendiente',
+        'fecha_creacion': datetime.now().isoformat(),
+        'respuesta': None,
+        'fecha_respuesta': None
+    }
+    
+    tickets.append(new_ticket)
+    save_tickets(tickets)
+    
+    # Refrescar índices del RAG para incluir el nuevo ticket
+    if rag_engine:
+        rag_engine.refresh_indexes()
+    
+    return jsonify(new_ticket), 201
+
 if __name__ == '__main__':
     # Crear directorio de datos si no existe
-    os.makedirs('data', exist_ok=True)
+    data_dir = os.path.join(BASE_DIR, 'data')
+    os.makedirs(data_dir, exist_ok=True)
+    os.makedirs(NORMATIVAS_DIR, exist_ok=True)
     
     # Inicializar el motor RAG antes de arrancar la aplicación
     initialize_rag()
     
-    app.run(debug=True, host='0.0.0.0', port=5010)
+    # Ejecutar en modo production (sin debug) para evitar problemas con el reloader
+    app.run(debug=False, host='0.0.0.0', port=5010)
